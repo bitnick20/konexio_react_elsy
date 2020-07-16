@@ -1,8 +1,20 @@
-.paires {
-    background-color: #CCC;
+.box:nth-child(even) {
+    background-color:#CCC ;
+    height: 190px;
+    padding: 10px;
+    text-align: center;
 }
 
-.box {
+.box:nth-child(odd) {
     background-color: #AAA;
+    height: 190px;
+    padding: 10px;
+    text-align: center;
 }
 
+/* 
+.box .boxGrey{
+    height: 190px;
+    padding: 10px;
+    text-align: center;
+} */
