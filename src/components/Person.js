@@ -6,6 +6,7 @@ class Person extends React.Component {
         return (
             <div> 
                 <Icon name="directions_walk" color="black"/>
+                <p>{this.props.steps}</p>
             </div>
         );
     }

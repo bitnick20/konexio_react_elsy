@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from './core/Icon';
+import Slider from './core/Slider';
 
 
 
@@ -8,7 +9,9 @@ class HeartRate extends React.Component {
         return (
             <div>
                 <Icon name="favorite" color="red"/>
-                <p>{this.props.heart}</p>
+                {/* <p>{this.props.heart}</p> */}
+                <Slider min={this.props.min} max={this.props.max}
+                onChange={this.props.onChange} value={this.props.heart}/>
             </div>
         );
     }
