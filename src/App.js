@@ -16,6 +16,7 @@ const MAX_STEPS = 50000
 
 
 class App extends React.Component {
+
   constructor (props) {
     super ();
 
@@ -27,11 +28,29 @@ class App extends React.Component {
     }
 
     this.onHeartChange = this.onHeartChange.bind(this);
+    this.onStepsChange = this.onStepsChange.bind(this);
+    this.onTemperatureChange =this.onTemperatureChange.bind(this);
   }
 
   onHeartChange (val) {
-    console.log("Console de App :");
+    console.log("App #onHeartChange :");
     this.setState({heart: val});
+  }
+
+  onStepsChange (val) {
+    console.log("App #onStepsChange :");
+    this.setState({steps: val});
+  }
+
+  onTemperatureChange (val) {
+    console.log("App #oonTemperatureChange :");
+    this.setState({temperature: val})
+  }
+
+  //METODE EN +
+
+  calculateWater () {
+    console.log("App #calculateWater :");
   }
 
   render () {
@@ -41,22 +60,28 @@ class App extends React.Component {
           <div className="row">
             <div className="box col-md-2 col-6">
               <Water water={this.state.water}/>
-              <Slider/>
             </div>
 
             <div className="box col-md-2 col-6">
-              <Person steps={this.state.steps}/>
-              <Slider/>
+              <Person min={MIN_STEPS} max={MAX_STEPS}
+              onChange={this.onStepsChange}
+              steps={this.state.steps} 
+              />
+              {/* <Slider/> */}
             </div>
               
             <div className="box col-md-2 col-6"> 
-              <HeartRate heart={this.state.heart}/>
+              <HeartRate min={MIN_HEART} max={MAX_HEART} 
+              onChange={this.onHeartChange}
+              heart={this.state.heart}
+              />
               {/* <Slider/> */}
             </div>
 
             <div className="box col-md-2 col-6">
-              <Temperature temperature={this.state.temperature}/>
-              <Slider/>
+              <Temperature min={MIN_TEMPERATURE} max={MAX_TEMPERATURE}
+              onChange={this.onTemperatureChange} temperature={this.state.temperature}/>
+              {/* <Slider/> */}
             </div>
           </div>
         </div>

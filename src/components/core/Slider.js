@@ -5,12 +5,14 @@ import 'rc-slider/assets/index.css';
 
 class Slider extends React.Component {
     render () {
-        console.log("cpn/core/#Slider :", this);
+        // console.log("cpn/core/#Slider :", this.props);
         return (
             <div>
-                <RCSlider max={this.props.max} 
-                min={this.props.min} onChange={this.props.onChanhe} 
-                value={this.props.value}/>
+                <RCSlider min={this.props.min} 
+                max={this.props.max} 
+                onChange={this.props.onChange} 
+                value={this.props.value}
+                />
             </div>
         );
     }
