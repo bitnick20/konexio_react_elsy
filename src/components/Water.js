@@ -8,7 +8,7 @@ class Water extends React.Component {
         return (
             <div>
                 <Icon name="local_drink" color="blue"/>
-                <p>{this.props.water}</p>
+                <p>{this.props.water} L</p>
             </div>
         );
     }
